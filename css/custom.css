@@ -1,0 +1,15 @@
+body {
+    background-color: rosybrown;
+}
+
+img {
+    max-width: 100%;
+}
+
+#header_area {
+    padding: 15px 0;
+}
+
+#header_area img {
+    height: 80px !important;
+}

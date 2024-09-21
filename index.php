@@ -11,7 +11,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    
+                    <a href=""><img src="<?php echo get_theme_mod('my_logo') ?>"></a>
                 </div>
             </div>
         </div>
