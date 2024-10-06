@@ -8,11 +8,11 @@
 </head>
 
 <body class="<?php body_class(); ?>">
-    <div id="header_area">
+    <header id="header_area" class="<?= get_theme_mod('my_menu_position_setting'); ?>">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <a href=""><img src="<?php echo get_theme_mod('my_logo') ?>"></a>
+                    <a href="<?= get_home_url() ?>"><img src="<?php echo get_theme_mod('my_logo') ?>"></a>
                 </div>
                 <div class="col-md-9">
                     <?php 
@@ -21,7 +21,19 @@
                 </div>
             </div>
         </div>
-    </div>
+    </header>
+
+    <section>
+        <div id="section_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?= the_content(); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <?php wp_footer(); ?>
 </body>
 

@@ -36,6 +36,28 @@ function my_customizer_register_settings($wp_customize) {
         'section' => 'my_header_area',
         'setting' => 'my_logo',
     ]));
+
+    // Add menu position start
+    $wp_customize->add_section('my_menu_position_section', [
+        'title' => __('Menu position', 'antorwp'),
+        'description' => __('You can update menu position from here', 'antorwp'),
+    ]);
+
+    $wp_customize->add_setting('my_menu_position_setting', [
+        'default' => 'right_menu'
+    ]);
+
+    $wp_customize->add_control('my_menu_position_setting', [
+        'label' => __('Update menu position', 'antorwp'),
+        'section' => 'my_menu_position_section',
+        'setting' => 'my_menu_position_setting',
+        'type' => 'radio',
+        'choices' => [
+            'left_menu' => 'Left menu',
+            'right_menu' => 'Right menu',
+            'center_menu' => 'Center menu',
+        ]
+    ]);
 }
 
 add_action('customize_register', 'my_customizer_register_settings');
