@@ -58,6 +58,24 @@ function my_customizer_register_settings($wp_customize) {
             'center_menu' => 'Center menu',
         ]
     ]);
+    // Add menu position end
+
+    // footer start
+    $wp_customize->add_section('my_footer_section', [
+        'title' => __('Footer', 'antorwp'),
+        'description' => __('You can update Footer from here', 'antorwp'),
+    ]);
+
+    $wp_customize->add_setting('my_footer_setting', [
+        'default' => 'Copyright  &copy 2024'
+    ]);
+
+    $wp_customize->add_control('my_footer_setting', [
+        'label' => __('Update footer', 'antorwp'),
+        'section' => 'my_footer_section',
+        'setting' => 'my_footer_setting',
+    ]);
+    // footer end
 }
 
 add_action('customize_register', 'my_customizer_register_settings');

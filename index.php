@@ -34,6 +34,18 @@
             </div>
         </div>
     </section>
+
+    <footer>
+        <div id="footer_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p><?= get_theme_mod('my_footer_setting'); ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <?php wp_footer(); ?>
 </body>
 
