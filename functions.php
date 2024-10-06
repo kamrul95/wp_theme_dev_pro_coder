@@ -18,6 +18,8 @@ function my_custom_theme_style() {
     wp_enqueue_script('jquery');
 }
 
+add_action('wp_enqueue_scripts', 'my_custom_theme_style');
+
 function my_customizer_register_settings($wp_customize) {
     // Add a section for the image
     $wp_customize->add_section('my_header_area', [
@@ -36,9 +38,15 @@ function my_customizer_register_settings($wp_customize) {
     ]));
 }
 
-
-add_action('wp_enqueue_scripts', 'my_custom_theme_style');
-
-
-
 add_action('customize_register', 'my_customizer_register_settings');
+
+// Enqueue google font
+function my_google_font() {
+    wp_enqueue_style('my_add_google_fonts', 'https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Oswald&display=swap');
+}
+
+add_action('wp_enqueue_scripts', 'my_google_font');
+
+
+// Main menu register
+register_nav_menu('main_menu', __('Main Menu', 'antorwp'));
